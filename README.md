@@ -17,8 +17,10 @@ npm install
 create auth.js
 add auth info from firebase website to that file
 
-used this in firebase config for test reasons 
+never make your auth token open to the internet
 
+used this in firebase config for test reasons
+TODO read more about firebase rules
 ```
 // Allow read/write access to all users under any conditions
 // Warning: **NEVER** use this rule set in production; it allows
