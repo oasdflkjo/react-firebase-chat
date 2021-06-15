@@ -19,16 +19,16 @@ add auth info from firebase website to that file
 
 never make your auth token open to the internet
 
+TODO how to really store api key in a safe plase when publishing the app
+
 used this in firebase config for test reasons
-TODO read more about firebase rules
+
 ```
-// Allow read/write access to all users under any conditions
-// Warning: **NEVER** use this rule set in production; it allows
-// anyone to overwrite your entire database.
+// Allow read/write access on all documents to any user signed in to the application
 service cloud.firestore {
   match /databases/{database}/documents {
     match /{document=**} {
-      allow read, write: if true;
+      allow read, write: if request.auth != null;
     }
   }
 }

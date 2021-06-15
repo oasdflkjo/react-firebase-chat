@@ -9,7 +9,7 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-const { firebaseConfig } = require('./auth.js');
+const { firebaseConfig } = require('../auth.js');
 
 firebase.initializeApp({
   apiKey: firebaseConfig.apiKey,
@@ -105,7 +105,7 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something" />
 
       <button type="submit" disabled={!formValue}>🕊️</button>
 
